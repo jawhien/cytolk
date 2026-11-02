@@ -8,20 +8,28 @@ pip install cytolk
 ```
 
 ## Building from source
-The build uses the latest `master` branch of `jawhien/tolk` from GitHub. GitHub Actions updates the submodule from that branch before every build.
+The build uses the checked-out `tolk` submodule from `jawhien/tolk`.
+Neither manual builds nor GitHub Actions automatically update it to a newer
+revision.
 
 ```
 git clone --recursive https://github.com/jawhien/cytolk
 ```
 
-After cloning, or before rebuilding an existing clone, update Tolk from GitHub:
+For an existing clone, initialize the submodule at the recorded revision:
 
 ```
 git submodule sync --recursive
+git submodule update --init
+```
+
+To explicitly update Tolk to the latest `master` from GitHub before a build:
+
+```
 git submodule update --init --remote tolk
 ```
 
-Then run 
+Then run:
 
 ```
 python setup.py install
