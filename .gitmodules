@@ -1,3 +1,4 @@
 [submodule "tolk"]
 	path = tolk
 	url = https://github.com/jawhien/tolk.git
+	branch = master
